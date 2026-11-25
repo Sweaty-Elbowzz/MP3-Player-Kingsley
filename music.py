@@ -5,7 +5,13 @@ window = tk.Tk()
 window.geometry("300x200")
 window.title("Song player")
 
+pygame.mixer.init()
+
 def songclick():
+    pygame.mixer.music.load("Die For You.mp3")
+    pygame.mixer.music.play(loops=0, start=0.0, fade_ms=0)
+    pygame.mixer.music.set_volume(10)
+
     list = tk.Frame(window)
     list.pack(pady=10)
     tk.Label(window, bg="white").pack(fill="x")
